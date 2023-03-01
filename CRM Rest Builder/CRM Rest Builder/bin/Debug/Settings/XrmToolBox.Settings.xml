@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Options xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AllowLogUsage xsi:nil="true" />
+  <CheckUpdateOnStartup>true</CheckUpdateOnStartup>
+  <CloseEachPluginSilently>false</CloseEachPluginSilently>
+  <CloseOpenedPluginsSilently>false</CloseOpenedPluginsSilently>
+  <ClosePluginsSilentlyOnWindowsShutdown>true</ClosePluginsSilentlyOnWindowsShutdown>
+  <ConnectionControlsAllowPreReleaseUpdates>false</ConnectionControlsAllowPreReleaseUpdates>
+  <DisplayLargeIcons>true</DisplayLargeIcons>
+  <DisplayOrder>Alphabetically</DisplayOrder>
+  <DisplayPluginsStoreOnlyIfUpdates>false</DisplayPluginsStoreOnlyIfUpdates>
+  <DisplayPluginsStoreOnStartup>true</DisplayPluginsStoreOnStartup>
+  <DisplayRecentlyUpdatedFirst>false</DisplayRecentlyUpdatedFirst>
+  <DoNotCheckForUpdates>false</DoNotCheckForUpdates>
+  <DoNotRememberPluginsWithoutConnection>false</DoNotRememberPluginsWithoutConnection>
+  <DoNotShowStartPage>true</DoNotShowStartPage>
+  <HiddenPlugins />
+  <LastAdvertisementDisplay>2023-03-01T15:16:56.4399951+05:30</LastAdvertisementDisplay>
+  <LastPlugin />
+  <LastUpdateCheck>2023-03-01T18:20:41.1465246+05:30</LastUpdateCheck>
+  <MergeConnectionFiles>false</MergeConnectionFiles>
+  <MostUsedList>
+    <PluginUseCount>
+      <Count>3</Count>
+      <Name>CRM_Rest_Builder.MyPlugin</Name>
+    </PluginUseCount>
+  </MostUsedList>
+  <MruItemsToDisplay>10</MruItemsToDisplay>
+  <NumberOfDaysToShowNewRibbon>7</NumberOfDaysToShowNewRibbon>
+  <OptinForApplicationInsights>true</OptinForApplicationInsights>
+  <PluginsListDocking>Document</PluginsListDocking>
+  <PluginsListIsHidden>false</PluginsListIsHidden>
+  <PluginsStoreShowIncompatible xsi:nil="true" />
+  <PluginsStoreShowInstalled xsi:nil="true" />
+  <PluginsStoreShowNew xsi:nil="true" />
+  <PluginsStoreShowUpdates xsi:nil="true" />
+  <PluginsUpdateSkip />
+  <RememberSession>false</RememberSession>
+  <ReuseConnections>false</ReuseConnections>
+  <ShowPluginUpdatesPanelAtStartup>true</ShowPluginUpdatesPanelAtStartup>
+  <FormSize>
+    <Height>832</Height>
+    <IsMaximized>true</IsMaximized>
+    <Width>1552</Width>
+  </FormSize>
+  <Theme>Light theme</Theme>
+</Options>

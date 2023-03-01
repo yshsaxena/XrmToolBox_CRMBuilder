@@ -1,0 +1,79 @@
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\CRM Rest Builder.dll.config
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\CRM Rest Builder.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\CRM Rest Builder.pdb
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\McTools.Xrm.Connection.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\McTools.Xrm.Connection.WinForms.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\microsoft.identitymodel.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Rest.ClientRuntime.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Web.WebView2.Core.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Web.XmlTransform.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Xrm.Sdk.Workflow.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Xrm.Tooling.Connector.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Xrm.Tooling.CrmConnectControl.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Xrm.Tooling.Ui.Styles.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Xrm.Tooling.WebResourceUtility.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.Client.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.Common.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.Configuration.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.ContentModel.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.Frameworks.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.Packaging.Core.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.Packaging.Core.Types.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.Packaging.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.Protocol.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.Repositories.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.RuntimeModel.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.Versioning.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\ScintillaNET.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\System.Security.Cryptography.Cng.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\System.Security.Cryptography.Pkcs.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\WeifenLuo.WinFormsUI.Docking.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2015.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\XrmToolBox.exe
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\XrmToolBox.Extensibility.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\XrmToolBox.PluginsStore.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Crm.Sdk.Proxy.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Web.WebView2.Core.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Web.WebView2.WinForms.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Web.XmlTransform.pdb
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Xrm.Sdk.Deployment.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Xrm.Sdk.Workflow.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Xrm.Tooling.Connector.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Xrm.Tooling.CrmConnectControl.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Microsoft.Xrm.Tooling.WebResourceUtility.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.Client.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.Common.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.Configuration.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.ContentModel.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.Frameworks.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.Packaging.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.Packaging.Core.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.Packaging.Core.Types.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.Protocol.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.Repositories.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.RuntimeModel.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\NuGet.Versioning.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\ScintillaNET.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\System.Security.Cryptography.Cng.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\System.Security.Cryptography.Pkcs.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\obj\Debug\CRM Rest Builder.csproj.CoreCompileInputs.cache
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\obj\Debug\CRM Rest Builder.csproj.CopyComplete
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\obj\Debug\CRM Rest Builder.dll
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\obj\Debug\CRM Rest Builder.pdb
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\obj\Debug\CRM Rest Builder.csproj.AssemblyReference.cache
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\obj\Debug\CRM_Rest_Builder.MyPluginControl.resources
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\obj\Debug\CRM Rest Builder.csproj.GenerateResource.cache

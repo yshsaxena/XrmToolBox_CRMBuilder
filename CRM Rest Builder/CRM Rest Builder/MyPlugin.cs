@@ -12,8 +12,8 @@ namespace CRM_Rest_Builder
     // Do not forget to update version number and author (company attribute) in AssemblyInfo.cs class
     // To generate Base64 string for Images below, you can use https://www.base64-image.de/
     [Export(typeof(IXrmToolBoxPlugin)),
-        ExportMetadata("Name", "My First Plugin"),
-        ExportMetadata("Description", "This is a description for my first plugin"),
+        ExportMetadata("Name", "CRM Rest Builder"),
+        ExportMetadata("Description", "With CRM Builder, users can easily build an API call without writing a single line of code. The straightforward, intuitive interface enables users to easily build Web API queries with the assistance of the UI."),
         // Please specify the base64 content of a 32x32 pixels image
         ExportMetadata("SmallImageBase64", null),
         // Please specify the base64 content of a 80x80 pixels image
