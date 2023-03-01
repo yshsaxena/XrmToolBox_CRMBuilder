@@ -13,12 +13,18 @@
   <DisplayRecentlyUpdatedFirst>false</DisplayRecentlyUpdatedFirst>
   <DoNotCheckForUpdates>false</DoNotCheckForUpdates>
   <DoNotRememberPluginsWithoutConnection>false</DoNotRememberPluginsWithoutConnection>
-  <DoNotShowStartPage>false</DoNotShowStartPage>
+  <DoNotShowStartPage>true</DoNotShowStartPage>
   <HiddenPlugins />
-  <LastAdvertisementDisplay>0001-01-01T00:00:00</LastAdvertisementDisplay>
-  <LastUpdateCheck>2023-03-01T14:42:53.69582+05:30</LastUpdateCheck>
+  <LastAdvertisementDisplay>2023-03-01T15:16:56.4399951+05:30</LastAdvertisementDisplay>
+  <LastPlugin />
+  <LastUpdateCheck>2023-03-01T15:43:38.3885516+05:30</LastUpdateCheck>
   <MergeConnectionFiles>false</MergeConnectionFiles>
-  <MostUsedList />
+  <MostUsedList>
+    <PluginUseCount>
+      <Count>2</Count>
+      <Name>CRM_Rest_Builder.MyPlugin</Name>
+    </PluginUseCount>
+  </MostUsedList>
   <MruItemsToDisplay>10</MruItemsToDisplay>
   <NumberOfDaysToShowNewRibbon>7</NumberOfDaysToShowNewRibbon>
   <OptinForApplicationInsights>true</OptinForApplicationInsights>
@@ -33,9 +39,9 @@
   <ReuseConnections>false</ReuseConnections>
   <ShowPluginUpdatesPanelAtStartup>true</ShowPluginUpdatesPanelAtStartup>
   <FormSize>
-    <Height>0</Height>
-    <IsMaximized>false</IsMaximized>
-    <Width>0</Width>
+    <Height>832</Height>
+    <IsMaximized>true</IsMaximized>
+    <Width>1552</Width>
   </FormSize>
   <Theme>Light theme</Theme>
 </Options>

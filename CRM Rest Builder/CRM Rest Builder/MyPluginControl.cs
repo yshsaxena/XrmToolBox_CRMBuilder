@@ -103,5 +103,10 @@ namespace CRM_Rest_Builder
                 LogInfo("Connection has changed to: {0}", detail.WebApplicationUrl);
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
