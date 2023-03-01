@@ -75,3 +75,5 @@ C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Res
 C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\obj\Debug\CRM Rest Builder.dll
 C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\obj\Debug\CRM Rest Builder.pdb
 C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\obj\Debug\CRM Rest Builder.csproj.AssemblyReference.cache
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\obj\Debug\CRM_Rest_Builder.MyPluginControl.resources
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\obj\Debug\CRM Rest Builder.csproj.GenerateResource.cache

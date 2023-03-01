@@ -45,7 +45,7 @@ namespace CRM_Rest_Builder
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.rdoXmlHttp = new System.Windows.Forms.RadioButton();
             this.rdoWebApi = new System.Windows.Forms.RadioButton();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbEntity = new System.Windows.Forms.ComboBox();
             this.toolStripMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -61,7 +61,7 @@ namespace CRM_Rest_Builder
             this.toolStripMenu.Location = new System.Drawing.Point(0, 0);
             this.toolStripMenu.Name = "toolStripMenu";
             this.toolStripMenu.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.toolStripMenu.Size = new System.Drawing.Size(1029, 27);
+            this.toolStripMenu.Size = new System.Drawing.Size(1029, 31);
             this.toolStripMenu.TabIndex = 4;
             this.toolStripMenu.Text = "toolStrip1";
             // 
@@ -69,20 +69,20 @@ namespace CRM_Rest_Builder
             // 
             this.tsbClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.tsbClose.Name = "tsbClose";
-            this.tsbClose.Size = new System.Drawing.Size(107, 24);
+            this.tsbClose.Size = new System.Drawing.Size(107, 28);
             this.tsbClose.Text = "Close this tool";
             this.tsbClose.Click += new System.EventHandler(this.tsbClose_Click);
             // 
             // tssSeparator1
             // 
             this.tssSeparator1.Name = "tssSeparator1";
-            this.tssSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.tssSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // tsbSample
             // 
             this.tsbSample.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.tsbSample.Name = "tsbSample";
-            this.tsbSample.Size = new System.Drawing.Size(57, 24);
+            this.tsbSample.Size = new System.Drawing.Size(57, 28);
             this.tsbSample.Text = "Try me";
             this.tsbSample.Click += new System.EventHandler(this.tsbSample_Click);
             // 
@@ -208,19 +208,21 @@ namespace CRM_Rest_Builder
             this.rdoWebApi.Text = "Web.API";
             this.rdoWebApi.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // cmbEntity
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(141, 265);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(300, 24);
-            this.comboBox2.TabIndex = 16;
+            this.cmbEntity.FormattingEnabled = true;
+            this.cmbEntity.Location = new System.Drawing.Point(141, 265);
+            this.cmbEntity.Name = "cmbEntity";
+            this.cmbEntity.Size = new System.Drawing.Size(300, 24);
+            this.cmbEntity.TabIndex = 16;
+            this.cmbEntity.Text = "Select an Entity";
+            this.cmbEntity.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // MyPluginControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cmbEntity);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.rdoCreate);
@@ -262,6 +264,6 @@ namespace CRM_Rest_Builder
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RadioButton rdoXmlHttp;
         private System.Windows.Forms.RadioButton rdoWebApi;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbEntity;
     }
 }

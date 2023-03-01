@@ -1,5 +1,7 @@
 ﻿using McTools.Xrm.Connection;
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Messages;
+using Microsoft.Xrm.Sdk.Metadata;
 using Microsoft.Xrm.Sdk.Query;
 using System;
 using System.Collections.Generic;
@@ -25,6 +27,27 @@ namespace CRM_Rest_Builder
 
         private void MyPluginControl_Load(object sender, EventArgs e)
         {
+            Dictionary<string, string> attributesData = new Dictionary<string, string>();
+            RetrieveAllEntitiesRequest metaDataRequest = new RetrieveAllEntitiesRequest();
+            RetrieveAllEntitiesResponse metaDataResponse = new RetrieveAllEntitiesResponse();
+            metaDataRequest.EntityFilters = EntityFilters.Entity;
+
+            // Execute the request.
+
+            metaDataResponse = (RetrieveAllEntitiesResponse)Service.Execute(metaDataRequest);
+
+            var entities = metaDataResponse.EntityMetadata;
+
+            Dictionary<String, String> list = new Dictionary<string, string>();
+
+            foreach (var item in entities)
+            {
+                if (item.LogicalName != null)
+                {
+                    cmbEntity.Items.Add(item.LogicalName);
+                }
+            }
+
             ShowInfoNotification("This is a notification that can lead to XrmToolBox repository", new Uri("https://github.com/MscrmTools/XrmToolBox"));
 
             // Loads or creates the settings for the plugin
@@ -105,6 +128,11 @@ namespace CRM_Rest_Builder
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
