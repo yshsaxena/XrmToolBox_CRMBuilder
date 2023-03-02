@@ -153,11 +153,23 @@ namespace CRM_Rest_Builder
             var entityFieldName = metaDataEntityResponse;
 
             checkedListBox1.Items.Clear();
+            CmbFilter.Items.Clear();
 
             foreach (var item in metaDataEntityResponse.EntityMetadata.Attributes)
             {
-                checkedListBox1.Items.Add(item.LogicalName); //entityFieldName.Results.Values).Items[0])).Attributes[0]
+                checkedListBox1.Items.Add(item.LogicalName);
+                CmbFilter.Items.Add(item.LogicalName);//entityFieldName.Results.Values).Items[0])).Attributes[0]
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

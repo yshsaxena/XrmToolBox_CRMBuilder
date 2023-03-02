@@ -48,6 +48,11 @@ namespace CRM_Rest_Builder
             this.cmbEntity = new System.Windows.Forms.ComboBox();
             this.groupColumns = new System.Windows.Forms.GroupBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.CmbFilter = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Execute = new System.Windows.Forms.Button();
             this.toolStripMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -239,10 +244,60 @@ namespace CRM_Rest_Builder
             this.checkedListBox1.Size = new System.Drawing.Size(367, 157);
             this.checkedListBox1.TabIndex = 0;
             // 
+            // CmbFilter
+            // 
+            this.CmbFilter.FormattingEnabled = true;
+            this.CmbFilter.Location = new System.Drawing.Point(61, 583);
+            this.CmbFilter.Name = "CmbFilter";
+            this.CmbFilter.Size = new System.Drawing.Size(194, 24);
+            this.CmbFilter.TabIndex = 18;
+            this.CmbFilter.Text = "Filter Column";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(61, 539);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 17);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Filter";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(269, 586);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 17);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Equal";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(330, 583);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(394, 22);
+            this.textBox1.TabIndex = 21;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // Execute
+            // 
+            this.Execute.Location = new System.Drawing.Point(61, 641);
+            this.Execute.Name = "Execute";
+            this.Execute.Size = new System.Drawing.Size(121, 37);
+            this.Execute.TabIndex = 22;
+            this.Execute.Text = "Execute";
+            this.Execute.UseVisualStyleBackColor = true;
+            // 
             // MyPluginControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Execute);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.CmbFilter);
             this.Controls.Add(this.groupColumns);
             this.Controls.Add(this.cmbEntity);
             this.Controls.Add(this.groupBox3);
@@ -290,5 +345,10 @@ namespace CRM_Rest_Builder
         private System.Windows.Forms.ComboBox cmbEntity;
         private System.Windows.Forms.GroupBox groupColumns;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.ComboBox CmbFilter;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button Execute;
     }
 }
