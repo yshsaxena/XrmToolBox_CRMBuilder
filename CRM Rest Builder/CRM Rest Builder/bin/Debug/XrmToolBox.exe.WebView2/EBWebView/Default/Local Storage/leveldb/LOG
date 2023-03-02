@@ -1,2 +1,3 @@
-2023/03/01-14:42:54.021 8fd0 Creating DB C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\XrmToolBox.exe.WebView2\EBWebView\Default\Local Storage\leveldb since it was missing.
-2023/03/01-14:42:54.033 8fd0 Reusing MANIFEST C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\XrmToolBox.exe.WebView2\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001
+2023/03/02-15:27:03.158 94f8 Reusing MANIFEST C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\XrmToolBox.exe.WebView2\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001
+2023/03/02-15:27:03.162 94f8 Recovering log #3
+2023/03/02-15:27:03.163 94f8 Reusing old log C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\XrmToolBox.exe.WebView2\EBWebView\Default\Local Storage\leveldb/000003.log 

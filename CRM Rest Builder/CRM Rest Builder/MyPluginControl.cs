@@ -20,6 +20,9 @@ namespace CRM_Rest_Builder
     {
         private Settings mySettings;
 
+        RetrieveEntityResponse metaDataEntityResponse = new RetrieveEntityResponse();
+        Dictionary<string, string> entityNames = new Dictionary<string, string>();
+
         public MyPluginControl()
         {
             InitializeComponent();
@@ -48,19 +51,19 @@ namespace CRM_Rest_Builder
                 }
             }
 
-            ShowInfoNotification("This is a notification that can lead to XrmToolBox repository", new Uri("https://github.com/MscrmTools/XrmToolBox"));
+            //ShowInfoNotification("This is a notification that can lead to XrmToolBox repository", new Uri("https://github.com/MscrmTools/XrmToolBox"));
 
-            // Loads or creates the settings for the plugin
-            if (!SettingsManager.Instance.TryLoad(GetType(), out mySettings))
-            {
-                mySettings = new Settings();
+            //// Loads or creates the settings for the plugin
+            //if (!SettingsManager.Instance.TryLoad(GetType(), out mySettings))
+            //{
+            //    mySettings = new Settings();
 
-                LogWarning("Settings not found => a new settings file has been created!");
-            }
-            else
-            {
-                LogInfo("Settings found and loaded");
-            }
+            //    LogWarning("Settings not found => a new settings file has been created!");
+            //}
+            //else
+            //{
+            //    LogInfo("Settings found and loaded");
+            //}
         }
 
         private void tsbClose_Click(object sender, EventArgs e)
@@ -134,7 +137,27 @@ namespace CRM_Rest_Builder
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            RetrieveEntityRequest metaDataEntityRequest = new RetrieveEntityRequest
+            {
+                // csv  contactnumber telephone2 require numeric
+                // csv contactnumber AmitYash
+                EntityFilters = EntityFilters.Attributes,//required /nonrequired , dataype (lookup, numberic,string)
+                LogicalName = cmbEntity.Text,
+                //ExtensionData = Entityname,
+                RetrieveAsIfPublished = true
 
+            };
+            //  Entity RetrievedEntityById = svc.Retrieve(entities[i].LogicalName, guid, new ColumnSet(true)); //it will retrieve the all attrributes
+            metaDataEntityResponse = (RetrieveEntityResponse)Service.Execute(metaDataEntityRequest);
+
+            var entityFieldName = metaDataEntityResponse;
+
+            checkedListBox1.Items.Clear();
+
+            foreach (var item in metaDataEntityResponse.EntityMetadata.Attributes)
+            {
+                checkedListBox1.Items.Add(item.LogicalName); //entityFieldName.Results.Values).Items[0])).Attributes[0]
+            }
         }
     }
 }
