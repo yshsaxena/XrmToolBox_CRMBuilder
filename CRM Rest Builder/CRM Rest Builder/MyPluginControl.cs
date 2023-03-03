@@ -11,6 +11,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using XrmToolBox.Extensibility;
 
@@ -200,6 +201,13 @@ namespace CRM_Rest_Builder
 
         private void Execute_Click(object sender, EventArgs e)
         {
+            var entityLogicalName = cmbEntity.Text;
+            string checkedColumn = string.Empty;
+            List<string> checkedColumnList = new List<string>();
+            foreach (var item in checkedListBox1.CheckedItems)
+            {
+                checkedColumn += item + ",";
+            }
             StringBuilder str = new StringBuilder();
             str.AppendLine("var req = new XMLHttpRequest();");
             str.AppendLine("req.open(\"GET\", Xrm.Page.context.getClientUrl()" + "/api/data/v9.1/accounts?$select=accountid,accountnumber&$filter=address1_addressid ne null\", true);");
