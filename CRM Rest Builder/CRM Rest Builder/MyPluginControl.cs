@@ -171,5 +171,65 @@ namespace CRM_Rest_Builder
         {
 
         }
+
+        private void rdoWebApi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoWebApi.Checked)
+            {
+                rdoAsync.Checked = true;
+            }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSynchronous_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoWebApi.Checked)
+            {
+                rdoAsync.Checked = true;
+            }
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Execute_Click(object sender, EventArgs e)
+        {
+            StringBuilder str = new StringBuilder();
+            str.AppendLine("var req = new XMLHttpRequest();");
+            str.AppendLine("req.open(\"GET\", Xrm.Page.context.getClientUrl()" + "/api/data/v9.1/accounts?$select=accountid,accountnumber&$filter=address1_addressid ne null\", true);");
+            str.AppendLine("req.setRequestHeader(\"OData - MaxVersion\", \"4.0\");");
+            str.AppendLine("req.setRequestHeader(\"OData - Version\", \"4.0\");");
+            str.AppendLine("req.setRequestHeader(\"Accept\", \"application / json\");");
+            str.AppendLine("req.setRequestHeader(\"Content - Type\", \"application / json; charset = utf - 8\");");
+            str.AppendLine("req.setRequestHeader(\"Prefer\", \"odata.include - annotations =\"*\"\"); ");
+            str.AppendLine("req.onreadystatechange = function() {");
+            str.AppendLine("    if (this.readyState === 4) {");
+            str.AppendLine("        req.onreadystatechange = null;");
+            str.AppendLine("        if (this.status === 200) {");
+            str.AppendLine("            var results = JSON.parse(this.response);");
+            str.AppendLine("            for (var i = 0; i < results.value.length; i++) {");
+            str.AppendLine("            }");
+            str.AppendLine("        } else {");
+            str.AppendLine("            Xrm.Utility.alertDialog(this.statusText);");
+            str.AppendLine("        }");
+            str.AppendLine("    }");
+            str.AppendLine("};");
+            str.AppendLine("req.send();");
+
+            richTextBox_Code.Text = str.ToString();
+
+
+        }
+
+        private void richTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
