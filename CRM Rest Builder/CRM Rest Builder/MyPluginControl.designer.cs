@@ -53,10 +53,18 @@ namespace CRM_Rest_Builder
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Execute = new System.Windows.Forms.Button();
+            this.tabCode = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.richTextBox_Code = new System.Windows.Forms.RichTextBox();
+            this.richTextBox_Result = new System.Windows.Forms.RichTextBox();
             this.toolStripMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupColumns.SuspendLayout();
+            this.tabCode.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripMenu
@@ -69,7 +77,7 @@ namespace CRM_Rest_Builder
             this.toolStripMenu.Location = new System.Drawing.Point(0, 0);
             this.toolStripMenu.Name = "toolStripMenu";
             this.toolStripMenu.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.toolStripMenu.Size = new System.Drawing.Size(1029, 27);
+            this.toolStripMenu.Size = new System.Drawing.Size(2121, 27);
             this.toolStripMenu.TabIndex = 4;
             this.toolStripMenu.Text = "toolStrip1";
             // 
@@ -144,6 +152,8 @@ namespace CRM_Rest_Builder
             // rdoCreate
             // 
             this.rdoCreate.AutoSize = true;
+            this.rdoCreate.Checked = true;
+            this.rdoCreate.Cursor = System.Windows.Forms.Cursors.Default;
             this.rdoCreate.Location = new System.Drawing.Point(162, 100);
             this.rdoCreate.Name = "rdoCreate";
             this.rdoCreate.Size = new System.Drawing.Size(134, 21);
@@ -155,6 +165,7 @@ namespace CRM_Rest_Builder
             // lblSynchronous
             // 
             this.lblSynchronous.AutoSize = true;
+            this.lblSynchronous.Checked = true;
             this.lblSynchronous.Location = new System.Drawing.Point(145, 19);
             this.lblSynchronous.Name = "lblSynchronous";
             this.lblSynchronous.Size = new System.Drawing.Size(112, 21);
@@ -162,6 +173,7 @@ namespace CRM_Rest_Builder
             this.lblSynchronous.TabStop = true;
             this.lblSynchronous.Text = "Synchronous";
             this.lblSynchronous.UseVisualStyleBackColor = true;
+            this.lblSynchronous.CheckedChanged += new System.EventHandler(this.lblSynchronous_CheckedChanged);
             // 
             // rdoAsync
             // 
@@ -170,7 +182,6 @@ namespace CRM_Rest_Builder
             this.rdoAsync.Name = "rdoAsync";
             this.rdoAsync.Size = new System.Drawing.Size(119, 21);
             this.rdoAsync.TabIndex = 12;
-            this.rdoAsync.TabStop = true;
             this.rdoAsync.Text = "Asynchronous";
             this.rdoAsync.UseVisualStyleBackColor = true;
             // 
@@ -197,6 +208,7 @@ namespace CRM_Rest_Builder
             // rdoXmlHttp
             // 
             this.rdoXmlHttp.AutoSize = true;
+            this.rdoXmlHttp.Checked = true;
             this.rdoXmlHttp.Location = new System.Drawing.Point(20, 19);
             this.rdoXmlHttp.Name = "rdoXmlHttp";
             this.rdoXmlHttp.Size = new System.Drawing.Size(94, 21);
@@ -212,9 +224,9 @@ namespace CRM_Rest_Builder
             this.rdoWebApi.Name = "rdoWebApi";
             this.rdoWebApi.Size = new System.Drawing.Size(83, 21);
             this.rdoWebApi.TabIndex = 11;
-            this.rdoWebApi.TabStop = true;
             this.rdoWebApi.Text = "Web.API";
             this.rdoWebApi.UseVisualStyleBackColor = true;
+            this.rdoWebApi.CheckedChanged += new System.EventHandler(this.rdoWebApi_CheckedChanged);
             // 
             // cmbEntity
             // 
@@ -243,6 +255,7 @@ namespace CRM_Rest_Builder
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(367, 157);
             this.checkedListBox1.TabIndex = 0;
+            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // CmbFilter
             // 
@@ -288,11 +301,62 @@ namespace CRM_Rest_Builder
             this.Execute.TabIndex = 22;
             this.Execute.Text = "Execute";
             this.Execute.UseVisualStyleBackColor = true;
+            this.Execute.Click += new System.EventHandler(this.Execute_Click);
+            // 
+            // tabCode
+            // 
+            this.tabCode.Controls.Add(this.tabPage1);
+            this.tabCode.Controls.Add(this.tabPage2);
+            this.tabCode.Location = new System.Drawing.Point(761, 100);
+            this.tabCode.Name = "tabCode";
+            this.tabCode.SelectedIndex = 0;
+            this.tabCode.Size = new System.Drawing.Size(951, 662);
+            this.tabCode.TabIndex = 25;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.richTextBox_Code);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(943, 633);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Code";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.richTextBox_Result);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(943, 633);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Result";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox_Code
+            // 
+            this.richTextBox_Code.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox_Code.Name = "richTextBox_Code";
+            this.richTextBox_Code.Size = new System.Drawing.Size(940, 630);
+            this.richTextBox_Code.TabIndex = 0;
+            this.richTextBox_Code.Text = "";
+            // 
+            // richTextBox_Result
+            // 
+            this.richTextBox_Result.Location = new System.Drawing.Point(1, 1);
+            this.richTextBox_Result.Name = "richTextBox_Result";
+            this.richTextBox_Result.Size = new System.Drawing.Size(940, 630);
+            this.richTextBox_Result.TabIndex = 1;
+            this.richTextBox_Result.Text = "";
+            this.richTextBox_Result.TextChanged += new System.EventHandler(this.richTextBox2_TextChanged);
             // 
             // MyPluginControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.tabCode);
             this.Controls.Add(this.Execute);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
@@ -309,9 +373,10 @@ namespace CRM_Rest_Builder
             this.Controls.Add(this.lblProcess);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStripMenu);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MyPluginControl";
-            this.Size = new System.Drawing.Size(1029, 788);
+            this.Size = new System.Drawing.Size(2121, 788);
             this.Load += new System.EventHandler(this.MyPluginControl_Load);
             this.toolStripMenu.ResumeLayout(false);
             this.toolStripMenu.PerformLayout();
@@ -320,6 +385,9 @@ namespace CRM_Rest_Builder
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupColumns.ResumeLayout(false);
+            this.tabCode.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,5 +418,10 @@ namespace CRM_Rest_Builder
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button Execute;
+        private System.Windows.Forms.TabControl tabCode;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.RichTextBox richTextBox_Code;
+        private System.Windows.Forms.RichTextBox richTextBox_Result;
     }
 }
