@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using XrmToolBox.Extensibility;
+using AttributeDetails = CRM_Rest_Builder.AttributeDetails;
 
 namespace CRM_Rest_Builder
 {
@@ -23,6 +24,7 @@ namespace CRM_Rest_Builder
 
         RetrieveEntityResponse metaDataEntityResponse = new RetrieveEntityResponse();
         Dictionary<string, string> entityNames = new Dictionary<string, string>();
+        Dictionary<string, AttributeDetails> AttributeDetailsList = new Dictionary<string, AttributeDetails>();
 
         public MyPluginControl()
         {
@@ -51,6 +53,7 @@ namespace CRM_Rest_Builder
                     cmbEntity.Items.Add(item.LogicalName);
                 }
             }
+            //ExecuteMethod(getEntityDetails);
 
             //ShowInfoNotification("This is a notification that can lead to XrmToolBox repository", new Uri("https://github.com/MscrmTools/XrmToolBox"));
 
@@ -106,6 +109,40 @@ namespace CRM_Rest_Builder
             });
         }
 
+        //private void getEntityDetails()
+        //{
+        //    WorkAsync(new WorkAsyncInfo
+        //    {
+        //        Work = (worker, args) =>
+        //        {
+
+
+        //        },
+        //        PostWorkCallBack = (args) =>
+        //        {
+
+        //        }
+        //    });
+        //}
+
+        public async Task GetEntityDetails()
+        {
+            foreach (var item in metaDataEntityResponse.EntityMetadata.Attributes)
+            {
+                AttributeDetails attributeObj = new AttributeDetails();
+                attributeObj.EntityPluralName = metaDataEntityResponse.EntityMetadata.LogicalCollectionName.ToString();
+                attributeObj.attributeLogicalName = item.LogicalName.ToString();
+                attributeObj.attributeType = item.AttributeType.ToString();
+                AttributeDetailsList.Add(item.LogicalName.ToString(), attributeObj);
+            }
+
+        }
+
+        public async Task getEntityDetailsAsynchronously()
+        {
+            await GetEntityDetails();
+        }
+
         /// <summary>
         /// This event occurs when the plugin is closed
         /// </summary>
@@ -146,7 +183,6 @@ namespace CRM_Rest_Builder
                 LogicalName = cmbEntity.Text,
                 //ExtensionData = Entityname,
                 RetrieveAsIfPublished = true
-
             };
             //  Entity RetrievedEntityById = svc.Retrieve(entities[i].LogicalName, guid, new ColumnSet(true)); //it will retrieve the all attrributes
             metaDataEntityResponse = (RetrieveEntityResponse)Service.Execute(metaDataEntityRequest);
@@ -155,6 +191,8 @@ namespace CRM_Rest_Builder
 
             checkedListBox1.Items.Clear();
             CmbFilter.Items.Clear();
+
+            Task task = getEntityDetailsAsynchronously();
 
             foreach (var item in metaDataEntityResponse.EntityMetadata.Attributes)
             {
@@ -201,16 +239,45 @@ namespace CRM_Rest_Builder
 
         private void Execute_Click(object sender, EventArgs e)
         {
+
             var entityLogicalName = cmbEntity.Text;
-            string checkedColumn = string.Empty;
             List<string> checkedColumnList = new List<string>();
+            checkedColumnList.Clear();
             foreach (var item in checkedListBox1.CheckedItems)
             {
-                checkedColumn += item + ",";
+                if (AttributeDetailsList[item.ToString()].attributeType == "Lookup")
+                {
+                    checkedColumnList.Add("_" + item.ToString() + "_value");
+                }
+                else
+                {
+                    checkedColumnList.Add(item.ToString());
+                }
             }
+
+            var equal = string.Empty;
+            if (AttributeDetailsList[CmbFilter.Text].attributeType == "String")
+            {
+                equal = "'" + textBoxEqual.Text + "'";
+            }
+            else
+            {
+                equal = textBoxEqual.Text;
+            }
+
+            var isAsync = false;
+            if (rdoAsync.Checked == true)
+            {
+                isAsync = true;
+            }
+            else
+            {
+                isAsync = false;
+            }
+
             StringBuilder str = new StringBuilder();
             str.AppendLine("var req = new XMLHttpRequest();");
-            str.AppendLine("req.open(\"GET\", Xrm.Page.context.getClientUrl()" + "/api/data/v9.1/accounts?$select=accountid,accountnumber&$filter=address1_addressid ne null\", true);");
+            str.AppendLine("req.open(\"GET\", Xrm.Page.context.getClientUrl() +" + "\"/api/data/v9.1/" + cmbEntity.Text + "?$select=" + String.Join(",", checkedColumnList) + "&$filter=" + CmbFilter.Text + " eq " + equal + "\", " + isAsync.ToString().ToLower() + ");");
             str.AppendLine("req.setRequestHeader(\"OData - MaxVersion\", \"4.0\");");
             str.AppendLine("req.setRequestHeader(\"OData - Version\", \"4.0\");");
             str.AppendLine("req.setRequestHeader(\"Accept\", \"application / json\");");
@@ -222,6 +289,19 @@ namespace CRM_Rest_Builder
             str.AppendLine("        if (this.status === 200) {");
             str.AppendLine("            var results = JSON.parse(this.response);");
             str.AppendLine("            for (var i = 0; i < results.value.length; i++) {");
+            foreach (var item in checkedListBox1.CheckedItems)
+            {
+                if (AttributeDetailsList[item.ToString()].attributeType == "Lookup")
+                {
+                    str.AppendLine("                var " + "_" + item.ToString() + "_value" + " = results.value[i][\"" + "_" + item.ToString() + "_value" + "\"];");
+                    str.AppendLine("                var " + "_" + item.ToString() + "_value" + "_formatted = results.value[i][\"" + "_" + item.ToString() + "_value" + "@OData.Community.Display.V1.FormattedValue\"];");
+                    str.AppendLine("                var " + "_" + item.ToString() + "_value" + "_lookuplogicalname = results.value[i][\"" + "_" + item.ToString() + "_value" + "@Microsoft.Dynamics.CRM.lookuplogicalname\"];");
+                }
+                else
+                {
+                    str.AppendLine("                var " + item + " = results.value[i][\"" + item + "\"];");
+                }
+            }
             str.AppendLine("            }");
             str.AppendLine("        } else {");
             str.AppendLine("            Xrm.Utility.alertDialog(this.statusText);");
@@ -229,6 +309,11 @@ namespace CRM_Rest_Builder
             str.AppendLine("    }");
             str.AppendLine("};");
             str.AppendLine("req.send();");
+
+            //for later use
+            //var _modifiedby_value = results.value[i]["_modifiedby_value"];
+            //var _modifiedby_value_formatted = results.value[i]["_modifiedby_value@OData.Community.Display.V1.FormattedValue"];
+            //var _modifiedby_value_lookuplogicalname = results.value[i]["_modifiedby_value@Microsoft.Dynamics.CRM.lookuplogicalname"];
 
             richTextBox_Code.Text = str.ToString();
 

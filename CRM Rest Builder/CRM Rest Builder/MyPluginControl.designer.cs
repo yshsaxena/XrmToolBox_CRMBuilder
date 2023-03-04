@@ -51,12 +51,12 @@ namespace CRM_Rest_Builder
             this.CmbFilter = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxEqual = new System.Windows.Forms.TextBox();
             this.Execute = new System.Windows.Forms.Button();
             this.tabCode = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.richTextBox_Code = new System.Windows.Forms.RichTextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.richTextBox_Result = new System.Windows.Forms.RichTextBox();
             this.toolStripMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -285,13 +285,13 @@ namespace CRM_Rest_Builder
             this.label3.Text = "Equal";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // textBox1
+            // textBoxEqual
             // 
-            this.textBox1.Location = new System.Drawing.Point(330, 583);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(394, 22);
-            this.textBox1.TabIndex = 21;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxEqual.Location = new System.Drawing.Point(330, 583);
+            this.textBoxEqual.Name = "textBoxEqual";
+            this.textBoxEqual.Size = new System.Drawing.Size(394, 22);
+            this.textBoxEqual.TabIndex = 21;
+            this.textBoxEqual.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Execute
             // 
@@ -324,6 +324,14 @@ namespace CRM_Rest_Builder
             this.tabPage1.Text = "Code";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // richTextBox_Code
+            // 
+            this.richTextBox_Code.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox_Code.Name = "richTextBox_Code";
+            this.richTextBox_Code.Size = new System.Drawing.Size(940, 630);
+            this.richTextBox_Code.TabIndex = 0;
+            this.richTextBox_Code.Text = "";
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.richTextBox_Result);
@@ -334,14 +342,6 @@ namespace CRM_Rest_Builder
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Result";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox_Code
-            // 
-            this.richTextBox_Code.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox_Code.Name = "richTextBox_Code";
-            this.richTextBox_Code.Size = new System.Drawing.Size(940, 630);
-            this.richTextBox_Code.TabIndex = 0;
-            this.richTextBox_Code.Text = "";
             // 
             // richTextBox_Result
             // 
@@ -358,7 +358,7 @@ namespace CRM_Rest_Builder
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabCode);
             this.Controls.Add(this.Execute);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxEqual);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.CmbFilter);
@@ -416,7 +416,7 @@ namespace CRM_Rest_Builder
         private System.Windows.Forms.ComboBox CmbFilter;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxEqual;
         private System.Windows.Forms.Button Execute;
         private System.Windows.Forms.TabControl tabCode;
         private System.Windows.Forms.TabPage tabPage1;
