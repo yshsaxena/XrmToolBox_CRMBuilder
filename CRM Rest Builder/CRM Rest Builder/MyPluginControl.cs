@@ -360,6 +360,11 @@ namespace CRM_Rest_Builder
             QueryExpression query = new QueryExpression(cmbEntity.Text);
             query.ColumnSet.AddColumns(checkedListBox1.CheckedItems.OfType<string>().ToArray());//"firstname", "lastname"
             query.Criteria.AddFilter(filter1);
+            //foreach(var item in checkedListBox1.CheckedItems)
+            //{
+            //    if()
+            //}
+            //query.AddLink("account", "customerid", "accountid");
 
             EntityCollection result = new EntityCollection();
 
@@ -385,7 +390,20 @@ namespace CRM_Rest_Builder
                 strResult.AppendLine("     {");
                 foreach (var item2 in item.Attributes.Keys)
                 {
-                    strResult.AppendLine("         " + item2 + ": \"" + item.Attributes[item2] + "\"");
+                    if (AttributeDetailsList[item2.ToString()].attributeType == "Lookup")
+                    {
+                        var name = ((Microsoft.Xrm.Sdk.EntityReference)item.Attributes.AsEnumerable().ToList()[0].Value).Name;
+                        var id = ((Microsoft.Xrm.Sdk.EntityReference)item.Attributes.AsEnumerable().ToList()[0].Value).Id;
+                        var logicaName = ((Microsoft.Xrm.Sdk.EntityReference)item.Attributes.AsEnumerable().ToList()[0].Value).LogicalName;
+                        strResult.AppendLine("         " + item2 + "_value: \"" + id + "\"");
+                        strResult.AppendLine("         " + item2 + "_formated_value: \"" + name + "\"");
+                        strResult.AppendLine("         " + item2 + "_entityLogicalName: \"" + logicaName + "\"");
+                    }
+                    else
+                    {
+                        strResult.AppendLine("         " + item2 + "_value: \"" + item.Attributes[item2] + "\"");
+                    }
+
                 }
                 strResult.AppendLine("     }");
                 if (count != result.Entities.Count)
