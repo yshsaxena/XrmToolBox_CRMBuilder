@@ -70,10 +70,10 @@ C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Res
 C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\ScintillaNET.xml
 C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\System.Security.Cryptography.Cng.xml
 C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\bin\Debug\System.Security.Cryptography.Pkcs.xml
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\obj\Debug\CRM_Rest_Builder.MyPluginControl.resources
+C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\obj\Debug\CRM Rest Builder.csproj.GenerateResource.cache
 C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\obj\Debug\CRM Rest Builder.csproj.CoreCompileInputs.cache
 C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\obj\Debug\CRM Rest Builder.csproj.CopyComplete
 C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\obj\Debug\CRM Rest Builder.dll
 C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\obj\Debug\CRM Rest Builder.pdb
 C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\obj\Debug\CRM Rest Builder.csproj.AssemblyReference.cache
-C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\obj\Debug\CRM_Rest_Builder.MyPluginControl.resources
-C:\Users\Yash Saxena\source\repos\XrmToolBox_CRMBuilder\CRM Rest Builder\CRM Rest Builder\obj\Debug\CRM Rest Builder.csproj.GenerateResource.cache

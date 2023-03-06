@@ -51,13 +51,15 @@ namespace CRM_Rest_Builder
             this.CmbFilter = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxEqual = new System.Windows.Forms.TextBox();
             this.Execute = new System.Windows.Forms.Button();
             this.tabCode = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.richTextBox_Code = new System.Windows.Forms.RichTextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.richTextBox_Result = new System.Windows.Forms.RichTextBox();
+            this.buttonCopy = new System.Windows.Forms.Button();
+            this.labelCopied = new System.Windows.Forms.Label();
             this.toolStripMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -77,7 +79,7 @@ namespace CRM_Rest_Builder
             this.toolStripMenu.Location = new System.Drawing.Point(0, 0);
             this.toolStripMenu.Name = "toolStripMenu";
             this.toolStripMenu.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.toolStripMenu.Size = new System.Drawing.Size(2121, 27);
+            this.toolStripMenu.Size = new System.Drawing.Size(2121, 31);
             this.toolStripMenu.TabIndex = 4;
             this.toolStripMenu.Text = "toolStrip1";
             // 
@@ -285,13 +287,13 @@ namespace CRM_Rest_Builder
             this.label3.Text = "Equal";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // textBox1
+            // textBoxEqual
             // 
-            this.textBox1.Location = new System.Drawing.Point(330, 583);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(394, 22);
-            this.textBox1.TabIndex = 21;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxEqual.Location = new System.Drawing.Point(330, 583);
+            this.textBoxEqual.Name = "textBoxEqual";
+            this.textBoxEqual.Size = new System.Drawing.Size(394, 22);
+            this.textBoxEqual.TabIndex = 21;
+            this.textBoxEqual.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Execute
             // 
@@ -299,7 +301,7 @@ namespace CRM_Rest_Builder
             this.Execute.Name = "Execute";
             this.Execute.Size = new System.Drawing.Size(121, 37);
             this.Execute.TabIndex = 22;
-            this.Execute.Text = "Execute";
+            this.Execute.Text = "Create Request";
             this.Execute.UseVisualStyleBackColor = true;
             this.Execute.Click += new System.EventHandler(this.Execute_Click);
             // 
@@ -307,6 +309,7 @@ namespace CRM_Rest_Builder
             // 
             this.tabCode.Controls.Add(this.tabPage1);
             this.tabCode.Controls.Add(this.tabPage2);
+            this.tabCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabCode.Location = new System.Drawing.Point(761, 100);
             this.tabCode.Name = "tabCode";
             this.tabCode.SelectedIndex = 0;
@@ -316,49 +319,77 @@ namespace CRM_Rest_Builder
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.richTextBox_Code);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(943, 633);
+            this.tabPage1.Size = new System.Drawing.Size(943, 627);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Code";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.richTextBox_Result);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(943, 633);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Result";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // richTextBox_Code
             // 
             this.richTextBox_Code.Location = new System.Drawing.Point(0, 0);
             this.richTextBox_Code.Name = "richTextBox_Code";
+            this.richTextBox_Code.ReadOnly = true;
             this.richTextBox_Code.Size = new System.Drawing.Size(940, 630);
             this.richTextBox_Code.TabIndex = 0;
             this.richTextBox_Code.Text = "";
+            this.richTextBox_Code.TextChanged += new System.EventHandler(this.richTextBox_Code_TextChanged);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.richTextBox_Result);
+            this.tabPage2.Location = new System.Drawing.Point(4, 31);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(943, 627);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Result";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // richTextBox_Result
             // 
+            this.richTextBox_Result.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox_Result.Location = new System.Drawing.Point(1, 1);
             this.richTextBox_Result.Name = "richTextBox_Result";
+            this.richTextBox_Result.ReadOnly = true;
             this.richTextBox_Result.Size = new System.Drawing.Size(940, 630);
             this.richTextBox_Result.TabIndex = 1;
             this.richTextBox_Result.Text = "";
             this.richTextBox_Result.TextChanged += new System.EventHandler(this.richTextBox2_TextChanged);
             // 
+            // buttonCopy
+            // 
+            this.buttonCopy.Location = new System.Drawing.Point(188, 641);
+            this.buttonCopy.Name = "buttonCopy";
+            this.buttonCopy.Size = new System.Drawing.Size(108, 37);
+            this.buttonCopy.TabIndex = 26;
+            this.buttonCopy.Text = "Copy Code";
+            this.buttonCopy.UseVisualStyleBackColor = true;
+            this.buttonCopy.Click += new System.EventHandler(this.buttonCopy_Click);
+            // 
+            // labelCopied
+            // 
+            this.labelCopied.AutoSize = true;
+            this.labelCopied.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCopied.Location = new System.Drawing.Point(302, 646);
+            this.labelCopied.Name = "labelCopied";
+            this.labelCopied.Size = new System.Drawing.Size(78, 24);
+            this.labelCopied.TabIndex = 27;
+            this.labelCopied.Text = "copied!!";
+            this.labelCopied.Visible = false;
+            this.labelCopied.Click += new System.EventHandler(this.labelCopied_Click);
+            // 
             // MyPluginControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labelCopied);
+            this.Controls.Add(this.buttonCopy);
             this.Controls.Add(this.tabCode);
             this.Controls.Add(this.Execute);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxEqual);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.CmbFilter);
@@ -376,7 +407,7 @@ namespace CRM_Rest_Builder
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MyPluginControl";
-            this.Size = new System.Drawing.Size(2121, 788);
+            this.Size = new System.Drawing.Size(2121, 776);
             this.Load += new System.EventHandler(this.MyPluginControl_Load);
             this.toolStripMenu.ResumeLayout(false);
             this.toolStripMenu.PerformLayout();
@@ -416,12 +447,14 @@ namespace CRM_Rest_Builder
         private System.Windows.Forms.ComboBox CmbFilter;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxEqual;
         private System.Windows.Forms.Button Execute;
         private System.Windows.Forms.TabControl tabCode;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.RichTextBox richTextBox_Code;
         private System.Windows.Forms.RichTextBox richTextBox_Result;
+        private System.Windows.Forms.Button buttonCopy;
+        private System.Windows.Forms.Label labelCopied;
     }
 }
