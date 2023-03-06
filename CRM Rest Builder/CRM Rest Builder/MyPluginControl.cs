@@ -241,6 +241,7 @@ namespace CRM_Rest_Builder
         {
 
             var entityLogicalName = cmbEntity.Text;
+            labelCopied.Visible = false;
             List<string> checkedColumnList = new List<string>();
             checkedColumnList.Clear();
             foreach (var item in checkedListBox1.CheckedItems)
@@ -276,44 +277,70 @@ namespace CRM_Rest_Builder
             }
 
             StringBuilder str = new StringBuilder();
-            str.AppendLine("var req = new XMLHttpRequest();");
-            str.AppendLine("req.open(\"GET\", Xrm.Page.context.getClientUrl() +" + "\"/api/data/v9.1/" + cmbEntity.Text + "?$select=" + String.Join(",", checkedColumnList) + "&$filter=" + CmbFilter.Text + " eq " + equal + "\", " + isAsync.ToString().ToLower() + ");");
-            str.AppendLine("req.setRequestHeader(\"OData - MaxVersion\", \"4.0\");");
-            str.AppendLine("req.setRequestHeader(\"OData - Version\", \"4.0\");");
-            str.AppendLine("req.setRequestHeader(\"Accept\", \"application / json\");");
-            str.AppendLine("req.setRequestHeader(\"Content - Type\", \"application / json; charset = utf - 8\");");
-            str.AppendLine("req.setRequestHeader(\"Prefer\", \"odata.include - annotations =\"*\"\"); ");
-            str.AppendLine("req.onreadystatechange = function() {");
-            str.AppendLine("    if (this.readyState === 4) {");
-            str.AppendLine("        req.onreadystatechange = null;");
-            str.AppendLine("        if (this.status === 200) {");
-            str.AppendLine("            var results = JSON.parse(this.response);");
-            str.AppendLine("            for (var i = 0; i < results.value.length; i++) {");
-            foreach (var item in checkedListBox1.CheckedItems)
-            {
-                if (AttributeDetailsList[item.ToString()].attributeType == "Lookup")
-                {
-                    str.AppendLine("                var " + "_" + item.ToString() + "_value" + " = results.value[i][\"" + "_" + item.ToString() + "_value" + "\"];");
-                    str.AppendLine("                var " + "_" + item.ToString() + "_value" + "_formatted = results.value[i][\"" + "_" + item.ToString() + "_value" + "@OData.Community.Display.V1.FormattedValue\"];");
-                    str.AppendLine("                var " + "_" + item.ToString() + "_value" + "_lookuplogicalname = results.value[i][\"" + "_" + item.ToString() + "_value" + "@Microsoft.Dynamics.CRM.lookuplogicalname\"];");
-                }
-                else
-                {
-                    str.AppendLine("                var " + item + " = results.value[i][\"" + item + "\"];");
-                }
-            }
-            str.AppendLine("            }");
-            str.AppendLine("        } else {");
-            str.AppendLine("            Xrm.Utility.alertDialog(this.statusText);");
-            str.AppendLine("        }");
-            str.AppendLine("    }");
-            str.AppendLine("};");
-            str.AppendLine("req.send();");
 
-            //for later use
-            //var _modifiedby_value = results.value[i]["_modifiedby_value"];
-            //var _modifiedby_value_formatted = results.value[i]["_modifiedby_value@OData.Community.Display.V1.FormattedValue"];
-            //var _modifiedby_value_lookuplogicalname = results.value[i]["_modifiedby_value@Microsoft.Dynamics.CRM.lookuplogicalname"];
+            if (rdoXmlHttp.Checked == true)
+            {
+                str.AppendLine("var req = new XMLHttpRequest();");
+                str.AppendLine("req.open(\"GET\", Xrm.Page.context.getClientUrl() +" + "\"/api/data/v9.1/" + AttributeDetailsList[CmbFilter.Text].EntityPluralName + "?$select=" + String.Join(",", checkedColumnList) + "&$filter=" + CmbFilter.Text + " eq " + equal + "\", " + isAsync.ToString().ToLower() + ");");
+                str.AppendLine("req.setRequestHeader(\"OData - MaxVersion\", \"4.0\");");
+                str.AppendLine("req.setRequestHeader(\"OData - Version\", \"4.0\");");
+                str.AppendLine("req.setRequestHeader(\"Accept\", \"application / json\");");
+                str.AppendLine("req.setRequestHeader(\"Content - Type\", \"application / json; charset = utf - 8\");");
+                str.AppendLine("req.setRequestHeader(\"Prefer\", \"odata.include - annotations =\"*\"\"); ");
+                str.AppendLine("req.onreadystatechange = function() {");
+                str.AppendLine("    if (this.readyState === 4) {");
+                str.AppendLine("        req.onreadystatechange = null;");
+                str.AppendLine("        if (this.status === 200) {");
+                str.AppendLine("            var results = JSON.parse(this.response);");
+                str.AppendLine("            for (var i = 0; i < results.value.length; i++) {");
+                foreach (var item in checkedListBox1.CheckedItems)
+                {
+                    if (AttributeDetailsList[item.ToString()].attributeType == "Lookup")
+                    {
+                        str.AppendLine("                var " + "_" + item.ToString() + "_value" + " = results.value[i][\"" + "_" + item.ToString() + "_value" + "\"];");
+                        str.AppendLine("                var " + "_" + item.ToString() + "_value" + "_formatted = results.value[i][\"" + "_" + item.ToString() + "_value" + "@OData.Community.Display.V1.FormattedValue\"];");
+                        str.AppendLine("                var " + "_" + item.ToString() + "_value" + "_lookuplogicalname = results.value[i][\"" + "_" + item.ToString() + "_value" + "@Microsoft.Dynamics.CRM.lookuplogicalname\"];");
+                    }
+                    else
+                    {
+                        str.AppendLine("                var " + item + " = results.value[i][\"" + item + "\"];");
+                    }
+                }
+                str.AppendLine("            }");
+                str.AppendLine("        } else {");
+                str.AppendLine("            Xrm.Utility.alertDialog(this.statusText);");
+                str.AppendLine("        }");
+                str.AppendLine("    }");
+                str.AppendLine("};");
+                str.AppendLine("req.send();");
+            }
+            else if (rdoWebApi.Checked == true)
+            {
+                str.AppendLine("Xrm.WebApi.online.retrieveMultipleRecords(\"" + cmbEntity.Text + "\", \"?$select=" + String.Join(",", checkedColumnList) + "&$filter=" + CmbFilter.Text + " eq " + equal + "\").then(");
+                str.AppendLine("    function success(results) {");
+                str.AppendLine("        for (var i = 0; i < results.entities.length; i++) {");
+                foreach (var item in checkedListBox1.CheckedItems)
+                {
+                    if (AttributeDetailsList[item.ToString()].attributeType == "Lookup")
+                    {
+                        str.AppendLine("                var " + "_" + item.ToString() + "_value" + " = results.value[i][\"" + "_" + item.ToString() + "_value" + "\"];");
+                        str.AppendLine("                var " + "_" + item.ToString() + "_value" + "_formatted = results.value[i][\"" + "_" + item.ToString() + "_value" + "@OData.Community.Display.V1.FormattedValue\"];");
+                        str.AppendLine("                var " + "_" + item.ToString() + "_value" + "_lookuplogicalname = results.value[i][\"" + "_" + item.ToString() + "_value" + "@Microsoft.Dynamics.CRM.lookuplogicalname\"];");
+                    }
+                    else
+                    {
+                        str.AppendLine("                var " + item + " = results.value[i][\"" + item + "\"];");
+                    }
+                }
+                str.AppendLine("        }");
+                str.AppendLine("    },");
+                str.AppendLine("    function(error) {");
+                str.AppendLine("        Xrm.Utility.alertDialog(error.message);");
+                str.AppendLine("    }");
+                str.AppendLine(");");
+
+            }
+
 
             richTextBox_Code.Text = str.ToString();
 
@@ -321,6 +348,20 @@ namespace CRM_Rest_Builder
         }
 
         private void richTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonCopy_Click(object sender, EventArgs e)
+        {
+            if (richTextBox_Code.Text != null)
+            {
+                Clipboard.SetText(richTextBox_Code.Text);
+                labelCopied.Visible = true;
+            }
+        }
+
+        private void labelCopied_Click(object sender, EventArgs e)
         {
 
         }
