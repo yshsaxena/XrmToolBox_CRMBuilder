@@ -344,6 +344,62 @@ namespace CRM_Rest_Builder
 
             richTextBox_Code.Text = str.ToString();
 
+            ConditionExpression condition1 = new ConditionExpression();
+            condition1.AttributeName = CmbFilter.Text;
+            condition1.Operator = ConditionOperator.Equal;
+            condition1.Values.Add(textBoxEqual.Text);
+
+            //ConditionExpression condition2 = new ConditionExpression();
+            //condition2.AttributeName = "firstname";
+            //condition2.Operator = ConditionOperator.Equal;
+            //condition2.Values.Add("Alexis");
+
+            FilterExpression filter1 = new FilterExpression();
+            filter1.Conditions.Add(condition1);
+
+            QueryExpression query = new QueryExpression(cmbEntity.Text);
+            query.ColumnSet.AddColumns(checkedListBox1.CheckedItems.OfType<string>().ToArray());//"firstname", "lastname"
+            query.Criteria.AddFilter(filter1);
+
+            EntityCollection result = new EntityCollection();
+
+            if (textBoxEqual.Text != null)
+            {
+                try
+                {
+                    result = Service.RetrieveMultiple(query);
+                }
+                catch (Exception msg)
+                {
+                    MessageBox.Show(msg.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+
+            StringBuilder strResult = new StringBuilder();
+            strResult.AppendLine("[");
+            var count = 0;
+            foreach (var item in result.Entities)
+            {
+                count++;
+                strResult.AppendLine("     {");
+                foreach (var item2 in item.Attributes.Keys)
+                {
+                    strResult.AppendLine("         " + item2 + ": \"" + item.Attributes[item2] + "\"");
+                }
+                strResult.AppendLine("     }");
+                if (count != result.Entities.Count)
+                {
+                    strResult.Append(" ,");
+                }
+            }
+            strResult.AppendLine("]");
+            richTextBox_Result.Text = strResult.ToString();
+            //foreach (var a in result1.Entities)
+            //{
+            //    Console.WriteLine("Name: " + a.Attributes["firstname"] + " " + a.Attributes["lastname"]);
+            //}
+
 
         }
 
@@ -362,6 +418,11 @@ namespace CRM_Rest_Builder
         }
 
         private void labelCopied_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox_Code_TextChanged(object sender, EventArgs e)
         {
 
         }
