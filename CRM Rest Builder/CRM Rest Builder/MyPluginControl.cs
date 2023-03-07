@@ -187,6 +187,7 @@ namespace CRM_Rest_Builder
             //  Entity RetrievedEntityById = svc.Retrieve(entities[i].LogicalName, guid, new ColumnSet(true)); //it will retrieve the all attrributes
             metaDataEntityResponse = (RetrieveEntityResponse)Service.Execute(metaDataEntityRequest);
 
+
             var entityFieldName = metaDataEntityResponse;
 
             checkedListBox1.Items.Clear();
@@ -196,8 +197,11 @@ namespace CRM_Rest_Builder
 
             foreach (var item in metaDataEntityResponse.EntityMetadata.Attributes)
             {
-                checkedListBox1.Items.Add(item.LogicalName);
-                CmbFilter.Items.Add(item.LogicalName);//entityFieldName.Results.Values).Items[0])).Attributes[0]
+                if (item.AttributeOf == null)
+                {
+                    checkedListBox1.Items.Add(item.LogicalName);
+                    CmbFilter.Items.Add(item.LogicalName);//entityFieldName.Results.Values).Items[0])).Attributes[0]
+                }
             }
         }
 
@@ -417,8 +421,6 @@ namespace CRM_Rest_Builder
             //{
             //    Console.WriteLine("Name: " + a.Attributes["firstname"] + " " + a.Attributes["lastname"]);
             //}
-
-
         }
 
         private void richTextBox2_TextChanged(object sender, EventArgs e)
