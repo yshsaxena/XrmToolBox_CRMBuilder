@@ -16,19 +16,48 @@
       <OrganizationDataServiceUrl>https://org71c0e0bb.api.crm8.dynamics.com/api/data/v9.2/</OrganizationDataServiceUrl>
       <OrganizationFriendlyName>Yash Saxena's Environment</OrganizationFriendlyName>
       <OrganizationServiceUrl>https://org71c0e0bb.api.crm8.dynamics.com/XRMServices/2011/Organization.svc</OrganizationServiceUrl>
+      <OrganizationUrlName>org71c0e0bb</OrganizationUrlName>
       <OrganizationVersion>9.2.23022.166</OrganizationVersion>
       <OriginalUrl>https://org71c0e0bb.crm8.dynamics.com</OriginalUrl>
       <ReplyUrl>app://58145b91-0c36-4500-8554-080854f2ac97/</ReplyUrl>
       <SavePassword>false</SavePassword>
       <ServerName>org71c0e0bb.crm8.dynamics.com</ServerName>
+      <ServerPort>80</ServerPort>
+      <TenantId>00000000-0000-0000-0000-000000000000</TenantId>
+      <Timeout />
+      <TimeoutTicks>1200000000</TimeoutTicks>
+      <UseIfd>false</UseIfd>
+      <UseMfa>false</UseMfa>
+      <UserName>yash.saxena@infusai.com</UserName>
+      <WebApplicationUrl>https://org71c0e0bb.crm8.dynamics.com</WebApplicationUrl>
+    </ConnectionDetail>
+    <ConnectionDetail>
+      <AuthType>OnlineFederation</AuthType>
+      <AzureAdAppId>51f81489-12ee-4a9e-aaae-a2591f45987d</AzureAdAppId>
+      <BrowserName>None</BrowserName>
+      <ConnectionId>78e9a526-187b-49a7-bf26-ee1e40068608</ConnectionId>
+      <ConnectionName>SRF DEV only using for query</ConnectionName>
+      <IsCustomAuth>false</IsCustomAuth>
+      <IsFromSdkLoginCtrl>true</IsFromSdkLoginCtrl>
+      <LastUsedOn>0001-01-01 00:00:00</LastUsedOn>
+      <NewAuthType>AD</NewAuthType>
+      <Organization>unq3505d5acaa98474197219a3a9decc</Organization>
+      <OrganizationDataServiceUrl>https://fcbdev.api.crm8.dynamics.com/api/data/v9.2/</OrganizationDataServiceUrl>
+      <OrganizationFriendlyName>FCB - Dev</OrganizationFriendlyName>
+      <OrganizationServiceUrl>https://fcbdev.api.crm8.dynamics.com/XRMServices/2011/Organization.svc</OrganizationServiceUrl>
+      <OrganizationVersion>9.2.23023.158</OrganizationVersion>
+      <OriginalUrl>https://fcbdev.crm8.dynamics.com</OriginalUrl>
+      <ReplyUrl>app://58145b91-0c36-4500-8554-080854f2ac97/</ReplyUrl>
+      <SavePassword>false</SavePassword>
+      <ServerName>fcbdev.crm8.dynamics.com</ServerName>
       <ServerPort />
       <TenantId>00000000-0000-0000-0000-000000000000</TenantId>
       <Timeout />
       <TimeoutTicks>0</TimeoutTicks>
       <UseIfd>false</UseIfd>
       <UseMfa>false</UseMfa>
-      <UserName>yash.saxena@infusai.com</UserName>
-      <WebApplicationUrl>https://org71c0e0bb.crm8.dynamics.com</WebApplicationUrl>
+      <UserName>InfusAi.Developer@srf.com</UserName>
+      <WebApplicationUrl>https://fcbdev.crm8.dynamics.com</WebApplicationUrl>
     </ConnectionDetail>
   </Connections>
   <IsReadOnly>false</IsReadOnly>
